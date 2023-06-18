@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+$ColorW: #ffff;
+$ColorB: #373049;
+html,body{
+    height: 100%;
+    background: $ColorB;
+    
+}
+
+
+#root{
+    width: 450px;
+    height: 100%;
+    background: $ColorW;
+    margin: 0px auto;
+}
