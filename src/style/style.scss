@@ -3,11 +3,20 @@
     padding: 0px;
 }
 
+@font-face {
+    font-family: "Regular";
+    src: url("../../public/Peyda/Peyda-Regular.ttf");
+}
 
+@font-face {
+    font-family: "Bold";
+    src: url("../../public/Peyda/Peyda-Bold.ttf");
+}
 
 $ColorW: #ffff;
 $ColorB: #373049;
 $colorBlue: #02205F;
+$colorG:#e6e7e8;
 html,body{
     height: 100%;
     background: $ColorB;
@@ -34,9 +43,8 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: center;
-    img{
-        width: 25%;
-    }
+    
+    
 }
 
 @keyframes hideLoader {
@@ -49,6 +57,63 @@ html,body{
       100% {
         display: none;
         z-index: -10;
-      }
+      }   
     
 }
+
+.home{
+    display:flex;
+    flex-direction: column;
+
+ } 
+ .logoGroup{
+    width: 150px;
+    align-self: flex-end;
+   
+ }
+ .title{
+    border-bottom: 1px $colorG solid ;
+    margin-bottom: 70px;
+    margin-top: 40px;
+
+    p{
+        font-family: "bold";
+        margin: 0px auto -1px auto;
+
+        text-align: center;
+        width: 90%;
+
+        border-bottom: 1px $ColorB solid;
+
+    }
+ }
+ .logos{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    .company{
+        width: 90px;
+        margin: 5px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p{
+            font-family: "Regular";
+            text-align: center;
+            font-size: 8pt;
+        }
+
+       img{
+           width: 90%;
+   
+       }
+
+    }
+ }
+ 
+
+
+
