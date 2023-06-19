@@ -13,4 +13,34 @@ html, body {
   height: 100%;
   background: white;
   margin: 0px auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.loader {
+  z-index: 1;
+  width: 450px;
+  height: 100%;
+  background: #02205F;
+  position: absolute;
+  animation: hideLoader 10s ease-in-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader img {
+  width: 25%;
+}
+
+@keyframes hideLoader {
+  60% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    z-index: -10;
+  }
 }/*# sourceMappingURL=style.css.map */
