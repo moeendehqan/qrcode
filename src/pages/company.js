@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom"
 import { dataComp } from "../config/dataCompany"
 import { useEffect, useState } from "react"
 import { VscHome } from "react-icons/vsc";
+import { MdLocationPin } from "react-icons/md";
+import { FaTelegramPlane } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 
 const Company = () =>{
     const { company } = useParams()
@@ -17,7 +21,7 @@ const Company = () =>{
     },[company])
     return(
         <div className="company">
-            <img src={process.env.PUBLIC_URL + 'icon/svg/isatisPouya.svg'} />
+            <img className="logoGroup" src={process.env.PUBLIC_URL + '/icon/svg/isatisPouya.svg'} />
             <div className="title">
                 <p>خانه <VscHome /></p>
                 <p>درگاه جامع ارتباط با گروه مالی و سرمایه ایساتیس پویا</p>
@@ -46,10 +50,11 @@ const Company = () =>{
                 </div>
             </div>
 
-            <button>ذخیره مخاطب</button>
+            <button className="contact">ذخیره مخاطب</button>
             <div className="btn">
-
-
+                <span><MdLocationPin/></span>
+                <span><FaTelegramPlane/></span>
+                <span><IoLogoWhatsapp/></span>
             </div>
 
 

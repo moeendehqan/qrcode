@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div className="home">
             <Loader />
-            <img className="logoGroup" src={process.env.PUBLIC_URL + 'icon/svg/isatisPouya.svg'} />
+            <img className="logoGroup" src={process.env.PUBLIC_URL + '/icon/svg/isatisPouya.svg'} />
             <div className="title">
                 <p>درگاه جامع ارتباط با گروه مالی و سرمایه ایساتیس پویا</p>
             </div>
