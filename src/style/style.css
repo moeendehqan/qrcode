@@ -24,6 +24,9 @@ html, body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+#root::-webkit-scrollbar {
+  width: 15px;
+}
 
 .loader {
   z-index: 1;
@@ -35,6 +38,9 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.loader img {
+  width: 45%;
 }
 
 @keyframes hideLoader {
@@ -53,25 +59,26 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+.home .title {
+  display: flex;
+  flex-direction: row-reverse;
+  border-bottom: 1px #e6e7e8 solid;
+  margin-bottom: 70px;
+  margin-top: 40px;
+}
+.home .title p {
+  font-family: "bold";
+  margin: 0px auto -1px auto;
+  text-align: center;
+  width: 90%;
+  border-bottom: 1px #373049 solid;
+}
 
 .logoGroup {
   width: 150px;
   align-self: flex-end;
   margin-top: 10px;
   margin-right: 10px;
-}
-
-.title {
-  border-bottom: 1px #e6e7e8 solid;
-  margin-bottom: 70px;
-  margin-top: 40px;
-}
-.title p {
-  font-family: "bold";
-  margin: 0px auto -1px auto;
-  text-align: center;
-  width: 90%;
-  border-bottom: 1px #373049 solid;
 }
 
 .logos {
@@ -86,8 +93,9 @@ html, body {
   height: 120px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
 }
 .logos .company p {
   font-family: "Regular";
@@ -108,9 +116,25 @@ html, body {
 .company .title {
   display: flex;
   flex-direction: row-reverse;
+  border-bottom: 1px #e6e7e8 solid;
+  margin-bottom: 70px;
+  margin-top: 40px;
+}
+.company .title p {
+  font-family: "bold";
+  margin: 0px auto -1px auto;
+  text-align: center;
+  width: 90%;
+  border-bottom: 1px #373049 solid;
 }
 .company .title :nth-child(1) {
   border-bottom: 1px #e6e7e8 solid;
+  cursor: pointer;
+  flex: 1;
+}
+.company .title :nth-child(2) {
+  cursor: pointer;
+  flex: 2;
 }
 
 .info .feild {
@@ -139,7 +163,7 @@ html, body {
   margin: 0px auto;
   border-radius: 8px;
   height: 42px;
-  color: #e6e7e8;
+  color: white;
   font-family: "bold";
 }
 
@@ -148,6 +172,7 @@ html, body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin: 10px 0px;
 }
 .btn span {
   font-size: 40px;
@@ -156,4 +181,9 @@ html, body {
   color: #834c9e;
   padding: 2px;
   margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

@@ -5,11 +5,30 @@ import { VscHome } from "react-icons/vsc";
 import { MdLocationPin } from "react-icons/md";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-
+import { useNavigate } from "react-router-dom";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const Company = () =>{
     const { company } = useParams()
     const [CompanyData, setCompanyData] = useState({})
+    const navigate = useNavigate()
+
+    const ToUrl = (url)=>{
+        if (url.length>0) {
+            window.open(url, '_blank');
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     useEffect(()=>{
         for (let i = 0; i < dataComp.length; i++) {
@@ -19,12 +38,15 @@ const Company = () =>{
             }
         }
     },[company])
+
+
+
     return(
         <div className="company">
             <img className="logoGroup" src={process.env.PUBLIC_URL + '/icon/svg/isatisPouya.svg'} />
             <div className="title">
-                <p>خانه <VscHome /></p>
-                <p> سرمایه ایساتیس پویا</p>
+                <p onClick={()=>navigate('/')}>خانه <VscHome /></p>
+                <p>{CompanyData.title}</p>
             </div>
 
             <div className="info">
@@ -44,7 +66,7 @@ const Company = () =>{
                     <p>آدرس</p>
                     <p>{CompanyData.address}</p>
                 </div>
-                <div className="feild">
+                <div onClick={()=>ToUrl(CompanyData.website)} className="feild">
                     <p>سایت</p>
                     <p>{CompanyData.website}</p>
                 </div>
@@ -52,9 +74,9 @@ const Company = () =>{
 
             <button className="contact">ذخیره مخاطب</button>
             <div className="btn">
-                <span><MdLocationPin/></span>
-                <span><FaTelegramPlane/></span>
-                <span><IoLogoWhatsapp/></span>
+                <span onClick={()=>ToUrl(CompanyData.loction)}><MdLocationPin/></span>
+                <span onClick={()=>ToUrl(CompanyData.telegram)}><FaTelegramPlane/></span>
+                <span onClick={()=>ToUrl(CompanyData.whatsapp)}><IoLogoWhatsapp/></span>
             </div>
 
 
