@@ -6,7 +6,6 @@ import { MdLocationPin } from "react-icons/md";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const Company = () =>{
     const { company } = useParams()
@@ -23,10 +22,22 @@ const Company = () =>{
 
 
 
+    const makeCall =(phoneNumber)=>{
+        var telLink = 'tel:' + phoneNumber;
+        window.location.href = telLink;
+      }
 
 
 
-
+      
+      const handleButtonClick = (id) => {
+        const fileUrl = process.env.PUBLIC_URL+'/contact/'+id+'.vcf';
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = id+'.vcf';
+        link.target = '_blank';
+        link.click();
+    };
 
 
 
@@ -54,11 +65,11 @@ const Company = () =>{
                     <p>نام شرکت</p>
                     <p>{CompanyData.title}</p>
                 </div>
-                <div className="feild">
+                <div onClick={()=>{makeCall(CompanyData.phone)}} className="feild">
                     <p>شماره تماس</p>
                     <p>{CompanyData.phone}</p>
                 </div>
-                <div className="feild">
+                <div onClick={()=>{makeCall(CompanyData.phone)}} className="feild">
                     <p>فکس</p>
                     <p>{CompanyData.fax}</p>
                 </div>
@@ -72,7 +83,7 @@ const Company = () =>{
                 </div>
             </div>
 
-            <button className="contact">ذخیره مخاطب</button>
+            <button onClick={()=>handleButtonClick(CompanyData.url)} className="contact">ذخیره مخاطب</button>
             <div className="btn">
                 <span onClick={()=>ToUrl(CompanyData.loction)}><MdLocationPin/></span>
                 <span onClick={()=>ToUrl(CompanyData.telegram)}><FaTelegramPlane/></span>
