@@ -16,7 +16,8 @@ export const dataComp = [
     {url:'bzrgd',title:'صندوق بازارگردانی',subTitle:'ایساتیس پویا',phone:'03535248955',fax:'03535236633',address:'یزد، بلوار جمهوری، نبش کوچه شرق، ساختمان بورس',website:'http://mmf.isatispm.ir',loction:'https://goo.gl/maps/8JmmmEZJztaEjQhr5',telegram:'',whatsapp:'',email:'',channel:'',inestagram:'',eita:''},
     {url:'egnik',title:'انرژی نیک',subTitle:'ایساتیس',phone:'03535236633',fax:'03535236633',address:'یزد، بلوار جمهوری، بن بست 64',website:'http://ipgrp.ir',loction:'https://goo.gl/maps/7kmyZnrgwCG7ny8H8',telegram:'',whatsapp:'',email:'',channel:'',inestagram:'',eita:''},
     {url:'shmdf',title:'سرمایه هوشمند',subTitle:'دیجیتال فردا',phone:'03537247727',fax:'03537247727',address:'خیابان مطهری، ساختمان علم و فناوری، اقبال',website:'http://arz4u.ir',loction:'https://goo.gl/maps/AxpBQwbCodKTH9aG9',telegram:'',whatsapp:'',email:'',channel:'',inestagram:'',eita:''},
-    {url:'fidip',title:'توسعه اطلاعات مالی',subTitle:'ایساتیس پویا',phone:'03535236633',fax:'03535236633',address:'یزد، بلوار جمهوری، ساختمان بورس ، طبقه 6، واحد 62',website:'http://fidip.ir',loction:'https://goo.gl/maps/8JmmmEZJztaEjQhr5',telegram:'',whatsapp:'',email:'',channel:'',inestagram:'',eita:''}
+    {url:'fidip',title:'توسعه اطلاعات مالی',subTitle:'ایساتیس پویا',phone:'03535236633',fax:'03535236633',address:'یزد، بلوار جمهوری، ساختمان بورس ، طبقه 6، واحد 62',website:'http://fidip.ir',loction:'https://goo.gl/maps/8JmmmEZJztaEjQhr5',telegram:'',whatsapp:'',email:'',channel:'',inestagram:'',eita:''},
+    {url:'fggos',title:'گروه مالی و گسترش',subTitle:'ایساتیس پویا',phone:'03535236633',fax:'03535236633',address:'یزد، بلوار جمهوری، ساختمان بورس ، طبقه 6، واحد 62',website:'http://fidip.ir',loction:'https://goo.gl/maps/8JmmmEZJztaEjQhr5',telegram:'',whatsapp:'',email:'',channel:'',inestagram:'',eita:''},
 ]
 
 
