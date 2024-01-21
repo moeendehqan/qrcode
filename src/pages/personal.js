@@ -53,6 +53,7 @@ const Personal = () =>{
         <div className="company">
             <img className="logoGroup" src={process.env.PUBLIC_URL + '/icon/svg/isatisPouya.svg'} />
             <div className="title">
+                <p onClick={()=>navigate('/')}>خانه</p>
                 <p>درگاه ارتباطی {PersonalData.name}</p>
             </div>
             <div className="info">
@@ -63,9 +64,13 @@ const Personal = () =>{
                         <img src={process.env.PUBLIC_URL+'/personalImg/'+PersonalData.img}/>
                     }
                     <div className="brdw"></div>
-                    <p className="istp">ایساتیس پویا</p>
 
             </div>
+            <div className="tb">
+                <p className="istp">ایساتیس پویا</p>
+            </div>
+
+
             <div className="feild">
                     <p>نام و نام خانوادگی</p>
                     <p>{PersonalData.name}</p>
@@ -73,6 +78,10 @@ const Personal = () =>{
                 <div className="feild">
                     <p>نام شرکت</p>
                     <p>{PersonalData.company}</p>
+                </div>
+                <div className="feild">
+                    <p>سمت</p>
+                    <p>{PersonalData.possition}</p>
                 </div>
                 <div onClick={()=>{makeCall(PersonalData.mobile)}} className="feild">
                     <p>تلفن همراه</p>
@@ -92,7 +101,7 @@ const Personal = () =>{
                 {PersonalData.telegram?<span onClick={()=>ToUrl('https://t.me/'+PersonalData.telegram)}><FaTelegramPlane/></span>:null}
                 {PersonalData.whatsapp?<span onClick={()=>ToUrl('https://wa.me/'+PersonalData.whatsapp)}><IoLogoWhatsapp/></span>:null}
                 {PersonalData.loction?<span onClick={()=>ToUrl(PersonalData.loction)}><MdLocationPin/></span>:null}
-                {PersonalData.ita?<span className="eta" onClick={()=>ToUrl('eitaa.com/'+PersonalData.whatsapp)}>ایتا</span>:null}
+                {PersonalData.ita?<span className="eta" onClick={()=>ToUrl('https://eitaa.com/'+PersonalData.ita)}><img src={process.env.PUBLIC_URL+'/icon/SVG/eita.svg'}/></span>:null}
                 {PersonalData.insta?<span onClick={()=>ToUrl('https://www.instagram.com/'+PersonalData.insta)}><FiInstagram /></span>:null}
             </div>
         </div>

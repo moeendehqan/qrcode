@@ -5,6 +5,8 @@ import { VscHome } from "react-icons/vsc";
 import { MdLocationPin } from "react-icons/md";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { CgInstagram } from "react-icons/cg";
+import { MdEmail } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 const Company = () =>{
@@ -46,6 +48,7 @@ const Company = () =>{
             const element = dataComp[i];
             if (element.url==company) {
                 setCompanyData(element)
+                console.log(element)
             }
         }
     },[company])
@@ -57,13 +60,13 @@ const Company = () =>{
             <img className="logoGroup" src={process.env.PUBLIC_URL + '/icon/svg/isatisPouya.svg'} />
             <div className="title">
                 <p onClick={()=>navigate('/')}>خانه <VscHome /></p>
-                <p>{CompanyData.title}</p>
+                <p>{CompanyData.title + ' ' + CompanyData.subTitle}</p>
             </div>
 
             <div className="info">
                 <div className="feild">
                     <p>نام شرکت</p>
-                    <p>{CompanyData.title}</p>
+                    <p>{CompanyData.title + ' ' + CompanyData.subTitle}</p>
                 </div>
                 <div onClick={()=>{makeCall(CompanyData.phone)}} className="feild">
                     <p>شماره تماس</p>
@@ -85,15 +88,16 @@ const Company = () =>{
 
             <button onClick={()=>handleButtonClick(CompanyData.url)} className="contact">ذخیره مخاطب</button>
             <div className="btn">
-                <span onClick={()=>ToUrl(CompanyData.loction)}><MdLocationPin/></span>
-                <span onClick={()=>ToUrl(CompanyData.telegram)}><FaTelegramPlane/></span>
-                <span onClick={()=>ToUrl(CompanyData.whatsapp)}><IoLogoWhatsapp/></span>
+                {CompanyData.loction?<span onClick={()=>ToUrl(CompanyData.loction)}><MdLocationPin/></span>:null}
+                {CompanyData.telegram?<span onClick={()=>ToUrl('https://t.me/'+CompanyData.telegram)}><FaTelegramPlane/></span>:null}
+                {CompanyData.whatsapp?<span onClick={()=>ToUrl('https://wa.me/'+CompanyData.whatsapp)}><IoLogoWhatsapp/></span>:null}
+                {CompanyData.email?<span onClick={()=>ToUrl('mailto:'+CompanyData.email)}><MdEmail/></span>:null}
+                {CompanyData.inestagram?<span onClick={()=>ToUrl('https://www.instagram.com/'+CompanyData.inestagram)}><CgInstagram/></span>:null}
+                {CompanyData.eita?<span className="eta" onClick={()=>ToUrl('https://eitaa.com/'+CompanyData.eita)}><img src={process.env.PUBLIC_URL+'/icon/SVG/eita.svg'}/></span>:null}
             </div>
-
-
-
-        
-
+            <div className="other">
+                {CompanyData.channel?<p onClick={()=>ToUrl('https://t.me/'+CompanyData.channel)}>پیوستند به کانال تلگرام</p>:null}
+            </div>
         </div>
     )
 }
