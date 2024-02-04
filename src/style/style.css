@@ -350,17 +350,98 @@ html, body {
   fill: #000;
 }
 
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Regular";
+  position: fixed;
+  bottom: -100%;
+  background-color: rgb(33, 7, 77);
+  color: white;
+  padding: 20px;
+  border-radius: 30px 30px 0 0;
+  text-align: center;
+  z-index: 999;
+  width: 30%;
+  height: 33%;
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+@keyframes slideIn {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+.popup-container .popup-content {
+  padding: 20px;
+}
+.popup-container .popup-text {
+  font-family: "Regular";
+  font-size: 18px;
+  margin: 0;
+}
+.popup-container .close-button {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.popup-container .close-button:hover,
+.popup-container .close-button:focus {
+  color: #b40000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.popup-container .popup-inp {
+  display: flex;
+  flex-direction: column;
+}
+.popup-container .popup-inp input, .popup-container .popup-inp button {
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 50%;
+}
+.popup-container .popup-inp input::-moz-placeholder {
+  text-align: center;
+}
+.popup-container .popup-inp input::placeholder {
+  text-align: center;
+}
+.popup-container .popup-inp button {
+  cursor: pointer;
+  background-color: #834c9e;
+  color: #fff;
+}
+.popup-container .popup-inp input::-webkit-outer-spin-button,
+.popup-container .popup-inp input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.popup-container .popup-inp input::-webkit-outer-spin-button input[type=number],
+.popup-container .popup-inp input::-webkit-inner-spin-button input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
 @media screen and (max-width: 600px) {
-  .home, #root {
+  .popup-container .home, .popup-container #root {
     width: 100vw;
   }
-  .loader {
+  .popup-container .loader {
     width: 100vw;
   }
-  .Hdr {
+  .popup-container .Hdr {
     width: 100% !important;
   }
-  .FixBtn {
+  .popup-container .FixBtn {
     width: 100vw !important;
   }
 }/*# sourceMappingURL=style.css.map */

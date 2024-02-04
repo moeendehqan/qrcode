@@ -6,9 +6,15 @@ import { BiLineChart , BiSolidCoinStack} from "react-icons/bi";
 import { BsUmbrella } from "react-icons/bs";
 import { RiExchangeFundsLine } from "react-icons/ri";
 import { GiTwoCoins } from "react-icons/gi";
+import { PopUpUI } from "../componet/PopUp-UI";
 const Home = () => {
     const [slider,setSlider] = useState(['1.jpg','3.jpg'])
     const navigate = useNavigate()
+    const [showPopUp, setShowPopUp] = useState(false);
+
+    const closePopup = () =>{
+        setShowPopUp(false)
+    }
 
     
     const ToUrl = (url)=>{
@@ -17,12 +23,21 @@ const Home = () => {
         }
     }
 
-
-
-
-    
+    const PopUp = () => {
+        setShowPopUp(true);
+      };
+     
+      useEffect(() => {
+        const popupTimer = setTimeout(() => {
+          PopUp();
+        }, 5000);
+      
+        return () => clearTimeout(popupTimer);
+      }, []);
+      
     return (
-        <div className="home">
+       <>
+        <div className="home" onClick={()=>setShowPopUp(false)}>
             <Loader />
             <div className="Hdr">
                 <img className="logoGroup" src={process.env.PUBLIC_URL + '/icon/svg/isatisPouya.svg'} />
@@ -77,11 +92,9 @@ const Home = () => {
 
             </div>
 
-
-
-
         </div>
-
+            {showPopUp && <PopUpUI onClose={closePopup}/>}
+       </>
     )
 
 }
