@@ -7,8 +7,8 @@ export const PopUpUI = ( props ) => {
     const [error, setError] = useState('');
 
     const validateMobile = () => {
-        if (!mobile.startsWith('0')) {
-          setError('شماره همراه باید با صفر شروع شود');
+        if (!mobile.startsWith('09')) {
+          setError('شماره همراه باید با 09 شروع شود');
           return false;
         }
     

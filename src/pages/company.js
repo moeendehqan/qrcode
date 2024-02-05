@@ -3,7 +3,7 @@ import { dataComp } from "../config/dataCompany"
 import { useEffect, useState } from "react"
 import { VscHome } from "react-icons/vsc";
 import { MdLocationPin } from "react-icons/md";
-import { FaTelegramPlane } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaTelegramPlane, FaTwitter } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { CgInstagram } from "react-icons/cg";
 import { MdEmail } from "react-icons/md";
@@ -91,6 +91,8 @@ const Company = () =>{
                 {CompanyData.loction?<span onClick={()=>ToUrl(CompanyData.loction)}><MdLocationPin/></span>:null}
                 {CompanyData.telegram?<span onClick={()=>ToUrl('https://t.me/'+CompanyData.telegram)}><FaTelegramPlane/></span>:null}
                 {CompanyData.whatsapp?<span onClick={()=>ToUrl('https://wa.me/'+CompanyData.whatsapp)}><IoLogoWhatsapp/></span>:null}
+                {/* {CompanyData.whatsapp?<span onClick={()=>ToUrl('https://wa.me/'+CompanyData.whatsapp)}><FaLinkedin /></span>:null} */}
+                {CompanyData.twitter?<span onClick={()=>ToUrl('https://x.com/'+CompanyData.twitter)}><FaTwitter /></span>:null}
                 {CompanyData.email?<span onClick={()=>ToUrl('mailto:'+CompanyData.email)}><MdEmail/></span>:null}
                 {CompanyData.inestagram?<span onClick={()=>ToUrl('https://www.instagram.com/'+CompanyData.inestagram)}><CgInstagram/></span>:null}
                 {CompanyData.eita?<span className="eta" onClick={()=>ToUrl('https://eitaa.com/'+CompanyData.eita)}><img src={process.env.PUBLIC_URL+'/icon/SVG/eita.svg'}/></span>:null}
